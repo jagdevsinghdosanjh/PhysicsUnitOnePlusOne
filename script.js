@@ -144,10 +144,10 @@ const questions = [
     },
 
     {
-        question: "Microscopic phenomenon’s are explained in ?",
-        optionA: "Faraday’s theory of electromagnetis",
+        question: "Microscopic phenomenon's are explained in ?",
+        optionA: "Faraday's theory of electromagnetis",
         optionB: "Quantum theory",
-        optionC: "Newton’s laws of motion",
+        optionC: "Newton's laws of motion",
         optionD: "Fermi paradox",
         correctOption: "optionB"
     },
@@ -177,14 +177,101 @@ const questions = [
         optionC: "Rocket Propulsion",
         optionD: "None",
         correctOption: "optionC"
+    },
+
+    {
+        question: "Newton's First Law is also known as ?",
+        optionA: "Law of Gravity",
+        optionB: "Law of Motion",
+        optionC: "Law of Inertia",
+        optionD: "Law of Momentum",
+        correctOption: "optionC"
+    },
+
+    {
+        question: "What are the name for isotopes with atomic number one ?",
+        optionA: "Helium, Lithium Ion",
+        optionB: "Lithium, Aluminium Ion",
+        optionC: "Hydrogen, Nitrogen ",
+        optionD: "Hydrogen, Deutrium, Tritium",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "How many cubic centimeters of water is equal to One Litre volume ?",
+        optionA: "1000",
+        optionB: "1200",
+        optionC: "1400",
+        optionD: "1600",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "How much approximate weight of pure honey makes its volume of one litre ?",
+        optionA: "1.53 Kg",
+        optionB: "1.33 Kg",
+        optionC: "1.63 Kg",
+        optionD: "1.433 Kg",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "Which Planet is the hottest ?",
+        optionA: "Jupitar",
+        optionB: "Mercury",
+        optionC: "Earth",
+        optionD: "Venus",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "Name the planet of our solar system that has highest number of satellites?",
+        optionA: "Mars",
+        optionB: "Saturn",
+        optionC: "Jupiter",
+        optionD: "Uranus",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "How many Satellites Juptier have ?",
+        optionA: "146",
+        optionB: "140",
+        optionC: "95",
+        optionD: "80",
+        correctOption: "optionC"
+    },
+
+    {
+        question: "Satellite Europa belongs to which planet ?",
+        optionA: "Saturn",
+        optionB: "Neptune",
+        optionC: "Jupyter",
+        optionD: "Mars",
+        correctOption: "optionC"
+    },
+    {
+        question: "Satellite Prometheus belongs to which planet ?",
+        optionA: "Jupyter",
+        optionB: "Neptune",
+        optionC: "Saturn",
+        optionD: "Mars",
+        correctOption: "optionC"
+    },
+
+   {
+        question: "Satellite Phobos belongs to which planet ?",
+        optionA: "Saturn",
+        optionB: "Neptune",
+        optionC: "Mars",
+        optionD: "Jupyter",
+        correctOption: "optionC"
     }
-
 ]
-
 
 let shuffledQuestions = [] //empty array to hold shuffled selected questions
 
-function handleQuestions() { 
+function handleQuestions() {
     //function to shuffle and push 20 questions to shuffledQuestions array
     while (shuffledQuestions.length <= 20) {
         const random = questions[Math.floor(Math.random() * questions.length)]
@@ -196,8 +283,8 @@ function handleQuestions() {
 
 
 let questionNumber = 1
-let playerScore = 0  
-let wrongAttempt = 0 
+let playerScore = 0
+let wrongAttempt = 0
 let indexNumber = 0
 
 // function for displaying next question in the array to dom
@@ -227,7 +314,7 @@ function checkForAnswer() {
             correctOption = option.labels[0].id
         }
     })
-   
+
     //checking to make sure a radio input has been checked or an option being chosen
     if (options[0].checked === false && options[1].checked === false && options[2].checked === false && options[3].checked == false) {
         document.getElementById('option-modal').style.display = "flex"
